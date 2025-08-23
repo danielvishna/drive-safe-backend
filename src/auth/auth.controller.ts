@@ -15,10 +15,6 @@ import { AuthGuard } from '@nestjs/passport';
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
-  @Get()
-  getHello(): string {
-    return this.authService.getHello();
-  }
   @Post('signup')
   async signUp(@Body() createUserDto: CreateUserDto) {
     return this.authService.signUp(createUserDto);
@@ -30,7 +26,7 @@ export class AuthController {
   }
 
   // Example of a protected route
-  @UseGuards(AuthGuard('jwt'))
+  //   @UseGuards(AuthGuard('jwt'))
   @Get('profile')
   getProfile(@Request() req) {
     return req.user;

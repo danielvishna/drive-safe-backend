@@ -10,11 +10,11 @@ import { JwtStrategy } from '../auth/jwt.strategy';
 @Module({
   imports: [
     // UsersModule,
-    PassportModule,
-    JwtModule.register({
-      secret: 'YOUR_SECRET_KEY', // Use a more secure key, preferably from env variables
-      signOptions: { expiresIn: '60m' },
-    }),
+    // PassportModule,
+    // JwtModule.register({
+    //   secret: 'YOUR_SECRET_KEY', // Use a more secure key, preferably from env variables
+    //   signOptions: { expiresIn: '60m' },
+    // }),
   ],
   providers: [AuthService, JwtStrategy],
 })
